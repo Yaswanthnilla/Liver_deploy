@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Prediction</title>
+    <style>
+         body {
+            background-image: url("../static/image/liver.png");
+            background-size: cover;
+        }
+
+        .container {
+            padding: 30px;
+            margin: 10px;
+            margin-right: 70%;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .container .predictform form {
+            padding: 10px 30px 10px 30px;
+            text-align: center;
+
+        }
+
+        .container .predictform form input {
+            padding: 10px;
+            margin-bottom: 7px;
+            height: 10px;
+            width: 250px;
+            border-radius: 5px;
+
+        }
+
+        .container .predictform form button {
+            color: black;
+            background-color: white;
+            border: 2px solid orange;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: bolder;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Liver Disease Prediction</h1>
+        <div class="predictform">
+            <form action="{{ url_for('predict4')}}" method="post">
+                <input type="text" name="Age" placeholder="Age" required="required" /> <br>
+                <input type="text" name="Gender" required="required" placeholder="Gender" /> <br>
+                <input type="text" name="Total_Bilirubin" required="required" placeholder="Total_Bilirubin" /> <br>
+                <input type="text" name="Direct_Bilirubin" required="required" placeholder="Direct_Bilirubin" /> <br>
+                <input type="text" name="Alkaline_Phosphotase" required="required" placeholder="Alkaline_Phosphotase" />
+                <br>
+                <input type="text" name="Alamine_Aminotransferase" required="required"
+                    placeholder="Alamine_Aminotransferase" /> <br>
+                <input type="text" name="Aspartate_Aminotransferase" required="required"
+                    placeholder="Aspartate_Aminotransferase" /> <br>
+                <input type="text" name="Total_Protiens" required="required" placeholder="Total_Protiens" /> <br>
+                <input type="text" name="Albumin" required="required" placeholder="Albumin" /> <br>
+                <input type="text" name="Albumin_and_Globulin_Ratio" required="required"
+                    placeholder="Albumin_and_Globulin_Ratio" /> <br>
+                <button type="submit">Predict</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
